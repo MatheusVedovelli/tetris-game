@@ -2,7 +2,7 @@ const SIZE = 24;
 let blockImages = [];
 let structure;
 let elapsed = 0;
-let delay = 1000;
+let delay = 700;
 let mapBlocks = [];
 
 function GetCurrentTime()
