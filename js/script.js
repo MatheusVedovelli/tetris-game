@@ -1,5 +1,5 @@
-const SIZE = 32;
-let blockImage;
+const SIZE = 24;
+let blockImages = [];
 let structure;
 let elapsed = 0;
 let delay = 1000;
@@ -12,13 +12,16 @@ function GetCurrentTime()
 
 function preload()
 {
-    blockImage = loadImage('assets/block.png');
+    for(let i = 1; i < 8; i++)
+    {
+        blockImages[i-1] = loadImage('assets/block' + i + '.png');
+    }
 }
 
 function setup()
 {
-    createCanvas(SIZE*17, SIZE*21);
-    structure = new Structure(floor(random(2)), 8, 1);
+    createCanvas(SIZE*13, SIZE*21);
+    structure = new Structure(floor(random(7)), 5, 0);
 }
 
 function keyPressed()
@@ -48,7 +51,7 @@ function draw()
         else
         {
             structure.blocks.map((block) => mapBlocks.push(block));
-            structure = new Structure(floor(random(2)), 8, 1);
+            structure = new Structure(floor(random(7)), 5, 0);
         }
 
         elapsed = GetCurrentTime();

@@ -1,10 +1,10 @@
 class Block
 {
-    constructor(x, y)
+    constructor(type, x, y)
     {
         this.x = x;
         this.y = y;
-        this.image = blockImage;
+        this.image = blockImages[type];
     }
 
     moveVertical(dist)

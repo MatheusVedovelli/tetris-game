@@ -1,6 +1,11 @@
 let blockStructure = [
     [{x:0, y:0}, {x:1, y:0}, {x:2, y:0}, {x:3, y:0}],
     [{x:0, y:0}, {x:0, y:1}, {x:1, y:1}, {x:2, y:1}],
+    [{x:2, y:0}, {x:0, y:1}, {x:1, y:1}, {x:2, y:1}],
+    [{x:0, y:0}, {x:0, y:1}, {x:1, y:0}, {x:1, y:1}],
+    [{x:1, y:0}, {x:2, y:0}, {x:0, y:1}, {x:1, y:1}],
+    [{x:1, y:0}, {x:0, y:1}, {x:1, y:1}, {x:2, y:1}],
+    [{x:0, y:0}, {x:1, y:0}, {x:1, y:1}, {x:2, y:1}],
 ];
 
 class Structure
@@ -12,7 +17,7 @@ class Structure
 
         for(let block of struct)
         {
-            this.blocks.push(new Block(block.x + x, block.y + y));
+            this.blocks.push(new Block(type, block.x + x, block.y + y));
         }
     }
 
